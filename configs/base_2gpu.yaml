@@ -1,0 +1,53 @@
+# CelebGen Base Model - 2 GPU Configuration (JiT-style)
+# Reference: https://github.com/LTH14/JiT
+# Usage: python scripts/train.py --config configs/base_2gpu.yaml
+
+# Experiment
+exp_name: celeba_base_2gpu
+seed: 42
+
+# Data
+data_root: ./data
+image_size: 64
+batch_size: 128
+num_workers: 4
+
+# Model
+model_size: base
+patch_size: 4
+
+# Training (JiT-style)
+epochs: 100
+lr: 5e-5  # JiT uses 5e-5 as base LR
+weight_decay: 0.0
+grad_clip: 1.0
+
+# Loss parameters (JiT-style logit-normal sampling)
+P_mean: -0.8
+P_std: 0.8
+noise_scale: 1.0
+t_eps: 1e-5
+
+# Scheduler
+scheduler: cosine
+warmup_epochs: 5
+warmup_start_factor: 0.1
+
+# Sampling
+num_sampling_steps: 50
+num_samples: 16
+sampling_method: euler  # euler or heun
+
+# FID
+fid_num_samples: 1000
+fid_batch_size: 64
+fid_interval: 10  # Compute FID every N epochs (0=disable)
+
+# Multi-GPU
+num_gpus: 2
+dist_backend: nccl
+
+# Logging
+log_interval: 10
+save_interval: 5
+
