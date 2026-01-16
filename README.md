@@ -6,8 +6,9 @@ CelebA 데이터셋 기반 얼굴 생성 AI - **Rectified Flow** with **DiT (Dif
 
 ### Generation Process (Epoch 40)
 
-![Generation GIF](experiments/celeba_base_2gpu/gifs/epoch_040.gif)
 ![Generation GIF](images/epoch_045.gif)
+
+![Sample PNG](images/epoch_045.png)
 
 *t=0 (noise) → t=1 (generated face) trajectory*
 
