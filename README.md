@@ -2,6 +2,16 @@
 
 CelebA 데이터셋 기반 얼굴 생성 AI - **Rectified Flow** with **DiT (Diffusion Transformer)**
 
+## 결과 (Results)
+
+### Generation Process (Epoch 40)
+
+![Generation GIF](experiments/celeba_base_2gpu/gifs/epoch_040.gif)
+
+*t=0 (noise) → t=1 (generated face) trajectory*
+
+---
+
 ## 아키텍처
 
 ```
